@@ -1,15 +1,10 @@
 package com.framework.spring.simpletest;
 
-import com.framework.spring.autowiredannotationbeanpostprocessor.Student;
-import com.framework.spring.autowiredannotationbeanpostprocessor.Test;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import java.io.FileNotFoundException;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.Log4jConfigurer;
-
-import java.io.FileNotFoundException;
 
 /**
  * Created by john on 18/3/29.
