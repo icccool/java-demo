@@ -1,0 +1,102 @@
+package com.code.redis;
+
+import java.util.Set;
+import java.util.UUID;
+
+
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Before;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.Tuple;
+
+/**
+ * 延时队列
+ * @author Knight-Ran
+ *
+ */
+public class DelayQueue {
+
+    private Jedis jedis;
+    private JedisPool pool;
+    private static final String QUEUE_NAME = "DEPLAY_QUEUE";
+
+    public void setUp() {
+        pool = new JedisPool(new JedisPoolConfig(), "localhost");
+        jedis = pool.getResource();
+    }
+
+
+    // 模拟任务处理队列
+    public static void addToTaskQue(String taskInfo){
+        System.out.println(taskInfo+"已经从延时队列中转至队列"+ "当前时间:"+ System.currentTimeMillis() );
+        System.out.println();
+    }
+
+    public void addToDeplayQueue(Task task){
+        System.out.println(task.toString()+ "已经加入延时队列");
+        jedis.zadd(QUEUE_NAME, task.getTime(), task.toString());
+    }
+
+    public void transferFromDelayQueue() throws InterruptedException{
+        while(true){
+            Set<Tuple> item = jedis.zrangeWithScores(QUEUE_NAME, 0, 0);
+            if(item != null && !item.isEmpty()){
+                Tuple tuple = item.iterator().next();
+                if(System.currentTimeMillis() >= tuple.getScore()){
+                    // TODO 获取锁
+                    jedis.zrem(QUEUE_NAME, tuple.getElement()); // 从延时队列中移除
+                    addToTaskQue(tuple.getElement()); //任务推入延时队列，因为这里只是延时
+                    // TODO 释放锁
+                }
+            }
+
+            Thread.sleep(100);
+
+        }
+    }
+
+    public void test() throws InterruptedException{
+        long now = System.currentTimeMillis();
+        Task task = new Task(UUID.randomUUID().toString(), now+10*1000, 10*1000+"后执行");
+        addToDeplayQueue(task);
+        task = new Task(UUID.randomUUID().toString(), now+20*1000, 20*1000+"后执行");
+        addToDeplayQueue(task);
+        task = new Task(UUID.randomUUID().toString(), now+30*1000, 30*1000+"后执行");
+        addToDeplayQueue(task);
+        task = new Task(UUID.randomUUID().toString(), now+40*1000, 40*1000+"后执行");
+        transferFromDelayQueue();
+
+    }
+
+    static class Task{
+        // 任务id
+        private String id ;
+        // 任务执行时间
+        private long time;
+        // 描述
+        private String desc;
+
+        public Task(String id, long time, String desc){
+            this.id = id ;
+            this.time = time;
+            this.desc = desc;
+        }
+
+        public String getId() {
+            return id;
+        }
+        public long getTime() {
+            return time;
+        }
+        public String getDesc() {
+            return desc;
+        }
+
+        @Override
+        public String toString() {
+            return "Task [id=" + id + ", time=" + time + ", desc=" + desc + "]";
+        }
+    }
+}

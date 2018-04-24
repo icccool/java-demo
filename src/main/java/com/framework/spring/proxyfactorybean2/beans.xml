@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd 
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-lazy-init="false">
+
+	<bean id="myUserService" class="com.framework.spring.proxyfactorybean2.UserService"></bean>
+
+	<!-- 定义前置通知 -->
+	<bean id="beforeLogAdvice" class="com.framework.spring.proxyfactorybean2.BeforeLogAdvice"></bean>
+	<!-- 定义后置通知 -->
+	<bean id="afterLogAdvice" class="com.framework.spring.proxyfactorybean2.AfterLogAdvice"></bean>
+	<!-- 定义异常通知 -->
+	<bean id="throwsLogAdvice" class="com.framework.spring.proxyfactorybean2.ThrowsLogAdvice"></bean>
+	<!-- 定义环绕通知 -->
+	<bean id="logAroundAdvice" class="com.framework.spring.proxyfactorybean2.LogAroundAdvice"></bean>
+
+	<!-- 定义代理类，名 称为myProxy，将通过myProxy访问业务类中的方法 -->
+	<bean id="myProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<!-- 没有接口会使用CGLIB生成代理
+		<property name="proxyInterfaces">
+			<value>com.framework.spring.proxyfactorybean2.IUserService</value>
+		</property>
+		 -->
+		<property name="target" ref="myUserService"></property>
+		<property name="interceptorNames">
+			<list>
+				<value>beforeLogAdvice</value>
+				<!-- 织入后置通知 -->
+				<value>afterLogAdvice</value>
+				<!-- 织入异常通知 -->
+				<value>throwsLogAdvice</value>
+				<!-- 织入环绕通知 -->
+				<value>logAroundAdvice</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.adCouponCodeMapper" >
+  <resultMap id="BaseResultMap" type="entity.adCouponCode" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="sys_user_id" property="sysUserId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="used_user_id" property="usedUserId" jdbcType="INTEGER" />
+    <result column="coupon" property="coupon" jdbcType="BIGINT" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="is_used" property="isUsed" jdbcType="CHAR" />
+    <result column="used_date" property="usedDate" jdbcType="TIMESTAMP" />
+    <result column="businessid" property="businessid" jdbcType="VARCHAR" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="CHAR" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+    <result column="activity_id" property="activityId" jdbcType="INTEGER" />
+    <result column="receive_date" property="receiveDate" jdbcType="TIMESTAMP" />
+    <result column="group_id" property="groupId" jdbcType="VARCHAR" />
+    <result column="is_view" property="isView" jdbcType="CHAR" />
+    <result column="is_locked" property="isLocked" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, sys_user_id, user_id, used_user_id, coupon, code, is_used, used_date, businessid, 
+    create_by, del_flag, remarks, update_date, update_by, create_date, telephone, activity_id, 
+    receive_date, group_id, is_view, is_locked
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ad_coupon_code
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from ad_coupon_code
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="entity.adCouponCode" >
+    insert into ad_coupon_code (id, sys_user_id, user_id, 
+      used_user_id, coupon, code, 
+      is_used, used_date, businessid, 
+      create_by, del_flag, remarks, 
+      update_date, update_by, create_date, 
+      telephone, activity_id, receive_date, 
+      group_id, is_view, is_locked
+      )
+    values (#{id,jdbcType=BIGINT}, #{sysUserId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, 
+      #{usedUserId,jdbcType=INTEGER}, #{coupon,jdbcType=BIGINT}, #{code,jdbcType=VARCHAR}, 
+      #{isUsed,jdbcType=CHAR}, #{usedDate,jdbcType=TIMESTAMP}, #{businessid,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{delFlag,jdbcType=CHAR}, #{remarks,jdbcType=VARCHAR}, 
+      #{updateDate,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{telephone,jdbcType=VARCHAR}, #{activityId,jdbcType=INTEGER}, #{receiveDate,jdbcType=TIMESTAMP}, 
+      #{groupId,jdbcType=VARCHAR}, #{isView,jdbcType=CHAR}, #{isLocked,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="entity.adCouponCode" >
+    insert into ad_coupon_code
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="sysUserId != null" >
+        sys_user_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="usedUserId != null" >
+        used_user_id,
+      </if>
+      <if test="coupon != null" >
+        coupon,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="isUsed != null" >
+        is_used,
+      </if>
+      <if test="usedDate != null" >
+        used_date,
+      </if>
+      <if test="businessid != null" >
+        businessid,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="telephone != null" >
+        telephone,
+      </if>
+      <if test="activityId != null" >
+        activity_id,
+      </if>
+      <if test="receiveDate != null" >
+        receive_date,
+      </if>
+      <if test="groupId != null" >
+        group_id,
+      </if>
+      <if test="isView != null" >
+        is_view,
+      </if>
+      <if test="isLocked != null" >
+        is_locked,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="sysUserId != null" >
+        #{sysUserId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="usedUserId != null" >
+        #{usedUserId,jdbcType=INTEGER},
+      </if>
+      <if test="coupon != null" >
+        #{coupon,jdbcType=BIGINT},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="isUsed != null" >
+        #{isUsed,jdbcType=CHAR},
+      </if>
+      <if test="usedDate != null" >
+        #{usedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessid != null" >
+        #{businessid,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="telephone != null" >
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="activityId != null" >
+        #{activityId,jdbcType=INTEGER},
+      </if>
+      <if test="receiveDate != null" >
+        #{receiveDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="groupId != null" >
+        #{groupId,jdbcType=VARCHAR},
+      </if>
+      <if test="isView != null" >
+        #{isView,jdbcType=CHAR},
+      </if>
+      <if test="isLocked != null" >
+        #{isLocked,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.adCouponCode" >
+    update ad_coupon_code
+    <set >
+      <if test="sysUserId != null" >
+        sys_user_id = #{sysUserId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="usedUserId != null" >
+        used_user_id = #{usedUserId,jdbcType=INTEGER},
+      </if>
+      <if test="coupon != null" >
+        coupon = #{coupon,jdbcType=BIGINT},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="isUsed != null" >
+        is_used = #{isUsed,jdbcType=CHAR},
+      </if>
+      <if test="usedDate != null" >
+        used_date = #{usedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessid != null" >
+        businessid = #{businessid,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="telephone != null" >
+        telephone = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="activityId != null" >
+        activity_id = #{activityId,jdbcType=INTEGER},
+      </if>
+      <if test="receiveDate != null" >
+        receive_date = #{receiveDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="groupId != null" >
+        group_id = #{groupId,jdbcType=VARCHAR},
+      </if>
+      <if test="isView != null" >
+        is_view = #{isView,jdbcType=CHAR},
+      </if>
+      <if test="isLocked != null" >
+        is_locked = #{isLocked,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.adCouponCode" >
+    update ad_coupon_code
+    set sys_user_id = #{sysUserId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
+      used_user_id = #{usedUserId,jdbcType=INTEGER},
+      coupon = #{coupon,jdbcType=BIGINT},
+      code = #{code,jdbcType=VARCHAR},
+      is_used = #{isUsed,jdbcType=CHAR},
+      used_date = #{usedDate,jdbcType=TIMESTAMP},
+      businessid = #{businessid,jdbcType=VARCHAR},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=CHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      telephone = #{telephone,jdbcType=VARCHAR},
+      activity_id = #{activityId,jdbcType=INTEGER},
+      receive_date = #{receiveDate,jdbcType=TIMESTAMP},
+      group_id = #{groupId,jdbcType=VARCHAR},
+      is_view = #{isView,jdbcType=CHAR},
+      is_locked = #{isLocked,jdbcType=CHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
