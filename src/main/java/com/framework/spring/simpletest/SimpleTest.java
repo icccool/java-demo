@@ -2,7 +2,6 @@ package com.framework.spring.simpletest;
 
 import com.framework.spring.autowiredannotationbeanpostprocessor.Student;
 import com.framework.spring.autowiredannotationbeanpostprocessor.Test;
-import org.apache.xmlbeans.ResourceLoader;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.ApplicationContext;
