@@ -19,9 +19,9 @@ public class ScheduledThreadPoolExecutorTest {
 		// 隔2秒后开始执行任务，并且在上一次任务开始后隔一秒再执行一次
 		// sExecutor.scheduleWithFixedDelay(task, 2, 1, TimeUnit.SECONDS);
 		// 隔6秒后执行一次，但只会执行一次
-		ScheduledFuture<String> fts= sExecutor.schedule(task, 6, TimeUnit.SECONDS);
+		ScheduledFuture<String> fts = sExecutor.schedule(task, 6, TimeUnit.SECONDS);
 		try {
-			String res  = fts.get();
+			String res = fts.get();
 			System.out.println(res + "执行完成!");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

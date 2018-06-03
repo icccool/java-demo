@@ -5,7 +5,6 @@ public class ThreadTest {
 	private static Object obj = new Object();
 
 	public static void main(String[] args) {
-
 		// 最多2078个线程
 		for (int i = 0; true; i++) {
 			new Thread(new Runnable() {

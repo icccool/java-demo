@@ -23,7 +23,7 @@ public class EmployeesServiceImpl implements EmployeesService {
 
         //如果捕捉异常事务不会回滚
 //        try {
-//            int d = 1 / 0;
+            int d = 1 / 0;
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
