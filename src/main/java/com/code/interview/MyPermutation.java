@@ -1,5 +1,11 @@
 package com.code.interview;
 
+/***
+ * 字符串组合 123 有6种组合 123 ,132, 213, 231, 321, 312
+ * 
+ * @author wang
+ *
+ */
 public class MyPermutation {
 	public static void main(String[] args) {
 		String str = "123";
