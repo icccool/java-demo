@@ -1,5 +1,10 @@
 package com.algorithms.sort;
 
+/**
+ *  <br>First, find the smallest item in the array and exchange it with the first entry (itself if the first entry is already the smallest)
+ *  <br>Then, find the next smallest item and exchange it with the second entry.
+ *  <br>Continue in this way until the entire array is sorted
+ */
 public class SelectionSort {
 
 	public static void main(String[] args) {
