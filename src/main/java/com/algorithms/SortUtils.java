@@ -13,6 +13,7 @@ public class SortUtils {
 		arr[b] = tmp;
 	}
 
+	//输出数组
 	public static void print(int[] arr){
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < arr.length; i++) {
