@@ -11,14 +11,14 @@ package com.algorithms.sort;
 public class ShellSort {
 
 	public static void main(String[] args) {
-		int[] arr = { 49, 38, 65, 97, 26, 13, 27, 49, 55, 4 };
-		shellSort(arr, arr.length);
+		int[] arr = { 9, 3, 5, 7, 6, 3, 7, 9, 5, 4 };
+		shellSort2(arr,arr.length);
 		for (int i = 0; i < arr.length; i++) {
 			System.out.println(arr[i]);
 		}
 	}
 
-	public static void shellSort(int a[], int n) {
+	public static void shellSort(int a[],int n) {
 		int i, j, gap;
 		for (gap = n / 2; gap > 0; gap /= 2) {
 			for (i = gap; i < n; i++) {
@@ -26,6 +26,20 @@ public class ShellSort {
 					swap(a, j, j + gap);
 				}
 			}
+		}
+	}
+	
+	public static void shellSort2(int a[],int n){
+		// Sort a[] into increasing order.
+		int h = 1;
+		while (h < n / 3)
+			h = 3 * h + 1; // 1, 4, 13, 40, 121, 364, 1093, ...
+		while (h >= 1) { // h-sort the array.
+			for (int i = h; i < n; i++) { // Insert a[i] among a[i-h], a[i-2*h], a[i-3*h]... .
+				for (int j = i; j >= h && a[j] > a[j - h]; j -= h)
+					swap(a, j, j - h);
+			}
+			h = h / 3;
 		}
 	}
 

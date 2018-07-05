@@ -1,13 +1,10 @@
 package com.code.cglib;
 
-import net.sf.cglib.proxy.Callback;
-import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodProxy;
+import java.lang.reflect.Method;
 
+import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
-
-import java.lang.reflect.Method;
 
 public class Test {
 	public static void main(String[] args) {
