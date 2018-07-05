@@ -6,7 +6,8 @@ package com.algorithms;
  *
  */
 public class SortUtils {
-
+	
+	//交换位置
 	public static void exch(int[] arr, int a, int b) {
 		int tmp = arr[a];
 		arr[a] = arr[b];
