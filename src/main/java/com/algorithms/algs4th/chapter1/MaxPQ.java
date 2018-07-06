@@ -6,17 +6,22 @@ import com.algorithms.SortUtils;
  * 基于堆实现的优先队列
  */
 public class MaxPQ {
+    //arr[0]未使用
     int arr[];
     int size = 0;
     public MaxPQ() {
     }
     public MaxPQ(int size) {
-        this.arr = new int[size];
-        this.size = size;
+        this.arr = new int[size + 1];
+        this.size = size + 1;
     }
     public MaxPQ(int[] arr) {
         this.arr = arr;
         this.size = arr.length;
+    }
+
+    public  int size(){
+        return size;
     }
 
     //如果当前节点比父节点大, 上浮当前节点
@@ -42,5 +47,20 @@ public class MaxPQ {
             k = j;
         }
     }
+
+    public void insert(int key){
+        arr[++size] = key;
+        swim(size);
+    }
+
+    public int delMax() {
+        int max = arr[size];
+        SortUtils.exch(arr, 1, size--);
+        arr[size + 1] = 0;
+        sink(1);
+        return max;
+    }
+
+
 
 }
