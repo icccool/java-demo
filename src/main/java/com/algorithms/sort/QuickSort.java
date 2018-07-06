@@ -31,16 +31,11 @@ public class QuickSort {
 		int p = lo;
 		for (int i = lo + 1; i <= hi; i++) {
 			if (arr[i] < arr[key]) {
-				swap(arr, ++p, i);
+				SortUtils.exch(arr, ++p, i);
 			}
 		}
-		swap(arr, key, p);
+		SortUtils.exch(arr, key, p);
 		return p;
 	}
 
-	public static void swap(int[] arr, int i, int j) {
-		int tmp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = tmp;
-	}
 }

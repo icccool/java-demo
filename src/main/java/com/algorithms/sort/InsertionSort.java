@@ -1,5 +1,7 @@
 package com.algorithms.sort;
 
+import com.algorithms.SortUtils;
+
 /**
  *  时间复杂度：最好情形O(n)，平均情形O(n^2)，最差情形O(n^2)
  *  空间复杂度：O(1)
@@ -21,7 +23,7 @@ public class InsertionSort {
 		for (int i = 1; i < arr.length; i++) {
 			for (int j = i; j > 0; j--) {
 				if (arr[j] < arr[j - 1]) {
-					SortUtil.exch(arr, j, j - 1);
+					SortUtils.exch(arr, j, j - 1);
 				}
 			}
 		}
