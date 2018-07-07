@@ -1,4 +1,4 @@
-package com.code.nio.selector;
+package com.code.io.nio;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

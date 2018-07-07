@@ -1,9 +1,8 @@
+package com.code.io.nio;
 
-package com.code.nio.selector;
 
 import java.io.Serializable;
-
-public class MyResponseObject implements Serializable {
+public class MyRequestObject implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -13,7 +12,7 @@ public class MyResponseObject implements Serializable {
 
 	private byte[] bytes;
 	
-	public MyResponseObject(String name, String value) {
+	public MyRequestObject(String name, String value) {
 		this.name = name;
 		this.value = value;
 		this.bytes = new byte[1024];
@@ -38,7 +37,7 @@ public class MyResponseObject implements Serializable {
 	@Override
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
-		sb.append("Response [name: " + name  + ", value: " + value + ", bytes: " + bytes.length+ "]");
+		sb.append("Request [name: " + name  + ", value: " + value + ", bytes: " + bytes.length+ "]");
 		return sb.toString();
 	}
 }

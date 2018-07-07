@@ -36,6 +36,7 @@ import ch.ethz.ssh2.Session;
 
 /**
  *
+ * ssh2 客户端
  * This is a very primitive SSH-2 dumb terminal (Swing based).
  * 
  * The purpose of this class is to demonstrate:

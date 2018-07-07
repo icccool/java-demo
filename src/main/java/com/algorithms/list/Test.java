@@ -14,6 +14,7 @@ public class Test {
 		List<String> linked = new LinkedList<String>();
 		
 		int a = 9 >> 1;
+		linked.iterator();
 		System.out.println(a);
 	}
 }

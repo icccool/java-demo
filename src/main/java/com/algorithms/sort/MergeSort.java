@@ -2,6 +2,12 @@ package com.algorithms.sort;
 
 import com.algorithms.SortUtils;
 
+/***
+ * A，B组各自再分成二组。依次类推，当分出来的小组只有一个数据时，可以认为这个小组组内已经达到了有序，然后再合并相邻的二个小组就可以了,
+ * 这样通过先递归的分解数列，再合并数列就完成了归并排序。
+ * @author wang
+ *
+ */
 public class MergeSort {
 	
 	public static void main(String[] args) {
