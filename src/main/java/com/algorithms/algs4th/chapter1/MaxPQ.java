@@ -31,10 +31,11 @@ public class MaxPQ<E extends Comparable<E>> {
 
 	// 小的节点下沉
 	private void sink(int k) {
+		//TODO
 		while (2 * k < N) {
 			// 左子节点
 			int j = 2 * k;
-			// 左子节点和右子几点对比
+			// 左子节点和右子节点对比
 			if (j < N && less(j, j + 1)) {
 				j++;
 			}
