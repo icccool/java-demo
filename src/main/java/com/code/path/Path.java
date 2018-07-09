@@ -10,7 +10,7 @@ public class Path {
 			String path = Path.class.getResource("test.properties").toString();
 			InputStream in = Path.class.getResourceAsStream("test.properties");
 			//file:/Users/john/Documents/workspace/java/target/classes/com/code/path/test.properties
-			System.out.println(path + "==>" + in);
+			System.out.println(path + "==>" + path);
 			//============================================================
 			//file:/Users/john/Documents/workspace/java/target/classes/
 			String path2 = Path.class.getResource("/").toString();

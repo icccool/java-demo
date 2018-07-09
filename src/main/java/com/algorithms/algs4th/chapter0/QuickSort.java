@@ -22,10 +22,12 @@ public class QuickSort {
         int i = lo, j = hi + 1;
         int key = lo;
         while (true){
+        	//扫描左边遇到比key大的停止
             while (arr[++i] > arr[key]) {
                 if (i >= hi)
                     break;
             }
+            //扫描右边记录比key小的停止
             while (arr[--j] < arr[key]) {
                 if (j <= lo)
                     break;
