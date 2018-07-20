@@ -5,15 +5,15 @@ import com.algorithms.SortUtils;
 /**
  * 基于堆实现的优先队列
  */
-public class MaxPQ<E extends Comparable<E>> {
+public class MaxPQ1<E extends Comparable<E>> {
 	// [0]未使用
 	private E arr[];
 	private int N = 0;
 
-	public MaxPQ() {
+	public MaxPQ1() {
 	}
 
-	public MaxPQ(int maxN) {
+	public MaxPQ1(int maxN) {
 		this.arr = (E[]) new Comparable[maxN + 1];
 	}
 
@@ -31,8 +31,7 @@ public class MaxPQ<E extends Comparable<E>> {
 
 	// 小的节点下沉
 	private void sink(int k) {
-		//TODO
-		while (2 * k < N) {
+		while (2 * k <= N) {
 			// 左子节点
 			int j = 2 * k;
 			// 左子节点和右子节点对比
@@ -51,7 +50,7 @@ public class MaxPQ<E extends Comparable<E>> {
 	public void insert(E key) {
 		arr[++N] = key;
 		swim(N);
-		SortUtils.print(arr);
+
 	}
 
 	// 返回最大值
@@ -61,6 +60,10 @@ public class MaxPQ<E extends Comparable<E>> {
 		arr[N + 1] = null;
 		sink(1);
 		return max;
+	}
+
+	public void  print(){
+		SortUtils.print(arr);
 	}
 
 	private boolean less(int i, int j) {
