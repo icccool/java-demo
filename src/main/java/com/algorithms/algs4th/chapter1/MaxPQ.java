@@ -113,5 +113,4 @@ public class MaxPQ<E extends Comparable<E>> {
 		arr[i] = arr[j];
 		arr[j] = tmp;
 	}
-
 }
