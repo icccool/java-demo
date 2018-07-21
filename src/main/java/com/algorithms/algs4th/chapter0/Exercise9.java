@@ -1,6 +1,9 @@
 package com.algorithms.algs4th.chapter0;
 
 /**
+ * input :  1 + 2 ) * 3 - 4 ) * 5 - 6 ) ) )
+ * output:  ( ( 1 + 2 ) * ( ( 3 - 4 ) * ( 5 - 6 ) ) )
+
  * Created by WANG on 2018/6/21.
  */
 public class Exercise9 {
