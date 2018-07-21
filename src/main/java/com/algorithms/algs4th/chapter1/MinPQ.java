@@ -18,6 +18,10 @@ public class MinPQ<E extends Comparable<E>> {
 		arr = (E[]) new Comparable[size + 1];
 	}
 	
+	public boolean isEmpty() {
+		return N < 1;
+	}
+	
 	//小的往上浮
 	private void swim(int k) {
 		while (k / 2 >= 1) {
