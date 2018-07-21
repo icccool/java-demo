@@ -12,16 +12,16 @@ public class TopM {
 	private static int M = 6;
 
 	public static void main(String[] args) {
-		Character[] c = { '0', '5', '6', '5', '2', '9','1' };
+		Character[] c = { '0', '5', '6', '5', '2', '9', '1' };
 		MinPQ<Character> pq = new MinPQ<Character>(M + 1);
 		for (int i = 0; i < c.length; i++) {
 			pq.insert(c[i]);
-			//超出M个 删除最小的
+			// 超出M个 删除最小的
 			if (pq.szie() > M) {
 				pq.delMin();
 			}
 		}
-		while(!pq.isEmpty()) {
+		while (!pq.isEmpty()) {
 			System.out.println(pq.delMin());
 		}
 	}
