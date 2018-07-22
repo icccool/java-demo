@@ -84,7 +84,7 @@ public class MaxPQ<E extends Comparable<E>> {
 		int j = 1;
 		while (j <= N) {
 			E p = arr[j];
-			String lab_p = j + "[label=" + p + "" + (int) ((char) p) + ",shape=circle];\n";
+			String lab_p = "  "+j + "[label=" + p + "" + (int) ((char) p) + ",shape=circle];\n";
 			sb.append(lab_p);
 			j++;
 		}
@@ -93,11 +93,11 @@ public class MaxPQ<E extends Comparable<E>> {
 		while (i <= N) {
 			// 是否有左节点
 			if (2 * i <= N) {
-				sb.append(i + "->" + (2 * i) + ";\n");
+				sb.append("  "+i + "->" + (2 * i) + ";\n");
 			}
 			// 是否有右节点
 			if (2 * i + 1 <= N) {
-				sb.append(i + "->" + (2 * i + 1) + ";\n");
+				sb.append("  "+i + "->" + (2 * i + 1) + ";\n");
 			}
 			i++;
 		}

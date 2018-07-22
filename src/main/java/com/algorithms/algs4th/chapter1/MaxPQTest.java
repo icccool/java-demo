@@ -2,9 +2,8 @@ package com.algorithms.algs4th.chapter1;
 
 /**
  * 最大优先队列测试
- * 
+ * <br>模拟P203 图2.4.6
  * @author wang
- *
  */
 public class MaxPQTest {
 
