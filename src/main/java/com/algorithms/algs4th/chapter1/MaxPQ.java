@@ -84,7 +84,7 @@ public class MaxPQ<E extends Comparable<E>> {
 		int j = 1;
 		while (j <= N) {
 			E p = arr[j];
-			String lab_p = "  "+j + "[label=" + p + "" + (int) ((char) p) + ",shape=circle];\n";
+			String lab_p = "  "+j + "[label=" + p  + ",shape=circle];\n";
 			sb.append(lab_p);
 			j++;
 		}

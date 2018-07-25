@@ -10,7 +10,7 @@ package com.algorithms.algs4th.chapter1;
  */
 public class TopM {
 
-	private static int M = 6;
+	private static int M = 3;
 
 	public static void main(String[] args) {
 		Character[] c = { '0', '5', '6', '5', '2', '9', '1' };
