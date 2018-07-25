@@ -1,4 +1,4 @@
-package com.algorithms.algs4th.chapter1;
+package com.algorithms.algs4th.chapter2;
 
 import com.graphviz.GraphUtil;
 
