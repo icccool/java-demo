@@ -11,7 +11,7 @@ import com.algorithms.SortUtils;
 public class HeapSort {
 
     public static void main(String[] args) {
-        int[] arr = {0, 10, 9, 8, 5, 6};
+        int[] arr = {0, 1, 9, 12, 10, 6};
         SortUtils.print(arr);
         sort(arr);
         SortUtils.print(arr);
@@ -23,6 +23,7 @@ public class HeapSort {
         for (int i = n / 2; i >= 1; i--) {
             sink(arr, i, n);
         }
+        SortUtils.print(arr);
         //堆排序
         while (n > 1) {
             SortUtils.exch(arr, 1, n--);
