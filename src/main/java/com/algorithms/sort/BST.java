@@ -1,5 +1,9 @@
 package com.algorithms.sort;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+
 /***
  * 二叉查找树 p252
  * 
@@ -43,6 +47,12 @@ public class BST<Key extends Comparable<Key>, Value> {
 		return get(root, key);
 	}
 
+	/**
+	 * 根据key获得节点
+	 * @param x
+	 * @param key
+	 * @return
+	 */
 	private Value get(Node x, Key key) {
 		if (key == null || x == null) {
 			return null;
@@ -56,11 +66,18 @@ public class BST<Key extends Comparable<Key>, Value> {
 			return x.val;
 		}
 	}
-
+	
+	
 	public void put(Key key, Value val) {
 		root = put(root, key, val);
 	}
 
+	/**
+	 * 插入元素
+	 * 
+	 * @param key
+	 * @param val
+	 */
 	private Node put(Node x, Key key, Value val) {
 		if (key == null || val == null) {
 			return null;
@@ -84,6 +101,26 @@ public class BST<Key extends Comparable<Key>, Value> {
 		in_order(root);
 	}
 	
+	public void levelPrint() {
+		level_order(root);
+	}
+	
+	/**
+	 * 前序遍历
+	 * @param x
+	 */
+	private void pre_order(Node x) {
+		if(x != null) {
+			System.out.println(x.key);
+			in_order(x.left);
+			in_order(x.right);
+		}
+	}
+	
+	/**
+	 * 中序遍历
+	 * @param x
+	 */
 	private void in_order(Node x) {
 		if(x != null) {
 			in_order(x.left);
@@ -92,10 +129,44 @@ public class BST<Key extends Comparable<Key>, Value> {
 		}
 	}
 	
+	
+	/**
+	 * 后序遍历
+	 * @param x
+	 */
+	private void post_order(Node x) {
+		if(x != null) {
+			in_order(x.left);
+			in_order(x.right);
+			System.out.println(x.key);
+		}
+	}
+	
+	/**
+	 * 层次遍历
+	 * @param x
+	 */
+	private void level_order(Node x) {
+		if(x != null) {
+//			Queue<Node> queue = new Queue<Node>();
+//			queue.add(x);
+//			while (!queue.isEmpty()) {
+//				Node p = queue.peek();
+//				System.out.println(p.key);
+//				if (p.left != null) {
+//					queue.add(p.left);
+//				}
+//				if (p.right != null) {
+//					queue.add(p.right);
+//				}
+//			}
+		}
+	}
+	
+	
 	public void graph() {
 		Node x = root;
 		while(x != null) {
-			
 		}
 	}
 }

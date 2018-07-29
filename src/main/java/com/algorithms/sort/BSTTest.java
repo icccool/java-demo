@@ -6,8 +6,7 @@ public class BSTTest {
 		bst.put("S", "SSS");
 		bst.put("E", "EEE");
 		bst.put("X", "xxx");
-		bst.put("A", "AAA");
-		bst.put("R", "RRR");
+		
 		// get
 		System.out.println("------------get------------");
 		String str = bst.get("X");
@@ -16,10 +15,10 @@ public class BSTTest {
 		System.out.println("------------size------------");
 		System.out.println(bst.size());
 		// delete
-		System.out.println("------------print------------");
+		System.out.println("------------delete------------");
 		bst.print();
 		// print
 		System.out.println("------------print------------");
-		bst.print();
+		bst.levelPrint();
 	}
 }
