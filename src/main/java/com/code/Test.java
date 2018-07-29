@@ -22,5 +22,6 @@ public class Test<A, V> {
 		int count = Runtime.getRuntime().availableProcessors();
 		System.out.println(Thread.currentThread().getName());
 		System.out.println(count);
+		System.out.println((int)(1/2));
 	}
 }
