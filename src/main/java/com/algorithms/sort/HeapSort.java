@@ -4,14 +4,14 @@ import com.algorithms.SortUtils;
 
 /**
  *
- * 先用下沉的方法构造了一个堆后，堆有一个特点啊，那就是它的第一个元素永远是最大（或最小）的，如果你想从小到大排，那就把首元素和最后一个元素交换，肯定没毛病，这样最大的就归位了。
+ * 先用下沉的方法构造了一个堆后，堆有一个特点啊，那就是它的第一个元素永远是最大（或最小）的，如果你想从小到大排，那就把首元素和最后一个元素交换，这样最大的就归位了。
  * 下一步再把前n-1个元素利用下沉恢复堆的结构，这样倒数第二大的有跑到最前面了，那就让它再和倒数第二个交换就行了，依次类推
  * Created by WANG on 2018/7/25.
  */
 public class HeapSort {
 
     public static void main(String[] args) {
-        int[] arr = {0, 1, 9, 12, 10, 6};
+        int[] arr = {0, 1, 0, 2, 4, 5, 1, 7, 9, 1, 2, 10};
         SortUtils.print(arr);
         sort(arr);
         SortUtils.print(arr);
@@ -24,7 +24,7 @@ public class HeapSort {
             sink(arr, i, n);
         }
         SortUtils.print(arr);
-        //堆排序
+        //堆排序(每次排序都先将最大的元素与最后一个元素交换位置，接着缩小数组，对除去最后一个元素的堆进行下沉排序)
         while (n > 1) {
             SortUtils.exch(arr, 1, n--);
             sink(arr, 1, n);
