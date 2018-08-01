@@ -1,4 +1,4 @@
-package com.algorithms.algs4th.chapter0;
+package com.algorithms.algs4th.chapter1;
 
 /**
  *

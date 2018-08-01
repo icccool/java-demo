@@ -1,5 +1,9 @@
 package com.algorithms.sort;
 
+/**
+ * 冒泡排序
+ * JIBO 2018-07-25 2:54:21
+ */
 public class BubbleSort {
 	public static void main(String[] args) {
 		int[] arr = { 5, 4, 3, 8, 9, 5 };

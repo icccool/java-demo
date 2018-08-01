@@ -1,4 +1,4 @@
-package com.algorithms.algs4th.chapter1;
+package com.algorithms.algs4th.chapter2;
 
 import com.graphviz.GraphUtil;
 
@@ -84,7 +84,7 @@ public class MaxPQ<E extends Comparable<E>> {
 		int j = 1;
 		while (j <= N) {
 			E p = arr[j];
-			String lab_p = "  "+j + "[label=" + p + "" + (int) ((char) p) + ",shape=circle];\n";
+			String lab_p = "  "+j + "[label=" + p  + ",shape=circle];\n";
 			sb.append(lab_p);
 			j++;
 		}

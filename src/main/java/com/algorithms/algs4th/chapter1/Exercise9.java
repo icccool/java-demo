@@ -1,4 +1,4 @@
-package com.algorithms.algs4th.chapter0;
+package com.algorithms.algs4th.chapter1;
 
 /**
  * input :  1 + 2 ) * 3 - 4 ) * 5 - 6 ) ) )

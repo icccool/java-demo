@@ -1,4 +1,4 @@
-package com.algorithms.algs4th.chapter1;
+package com.algorithms.algs4th.chapter2;
 
 /**
  * 最大优先队列测试

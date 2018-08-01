@@ -1,4 +1,4 @@
-package com.algorithms.algs4th.chapter0;
+package com.algorithms.algs4th.chapter1;
 
 /**
  * Created by WANG on 2018/6/20.
