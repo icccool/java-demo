@@ -1,0 +1,26 @@
+digraph G {
+S -> H;
+S -> X;
+H -> A;
+H -> R;
+X -> 714[style=invis];
+714[style=invis];
+X -> 268[style=invis];
+268[style=invis];
+A -> 551[style=invis];
+551[style=invis];
+A -> C;
+R -> M;
+R -> 396[style=invis];
+396[style=invis];
+C -> 240[style=invis];
+240[style=invis];
+C -> 293[style=invis];
+293[style=invis];
+M -> 697[style=invis];
+697[style=invis];
+M -> 358[style=invis];
+358[style=invis];
+
+
+}
