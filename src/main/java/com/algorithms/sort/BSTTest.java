@@ -23,8 +23,8 @@ public class BSTTest {
 		//bst.deleteMin();
 
 		System.out.println("------------delete E------------");
-		bst.delete("S");
-		bst.delete("E");
+		//bst.delete("E");
+		
 		//树的高度
 		System.out.println("------------树的高度------------");
 		int h = bst.height();

@@ -69,10 +69,6 @@ public class BST<K extends Comparable<K>, V> {
 		}
 	}
 
-	public void put(K key, V val) {
-		root = put(root, key, val);
-	}
-
 	/**
 	 * 插入元素 <br>
 	 * 如果插入相同的key会更新val
@@ -80,6 +76,10 @@ public class BST<K extends Comparable<K>, V> {
 	 * @param key
 	 * @param val
 	 */
+	public void put(K key, V val) {
+		root = put(root, key, val);
+	}
+
 	private Node put(Node x, K key, V val) {
 		if (key == null || val == null) {
 			return null;
@@ -136,32 +136,13 @@ public class BST<K extends Comparable<K>, V> {
 		GraphUtil.printDotGraph(sb.toString(), "inOrderGraph");
 	}
 
+	/**
+	 * 中序遍历
+	 */
 	public void inOrderPrint() {
 		in_order(root);
 	}
-
-	public void levelOrderPrint() {
-		level_order(root);
-	}
-
-	/**
-	 * 前序遍历
-	 * 
-	 * @param x
-	 */
-	private void pre_order(Node x) {
-		if (x != null) {
-			System.out.println(x.key);
-			in_order(x.left);
-			in_order(x.right);
-		}
-	}
-
-	/**
-	 * 中序遍历
-	 * 
-	 * @param x
-	 */
+	
 	private void in_order(Node x) {
 		if (x != null) {
 			in_order(x.left);
@@ -171,23 +152,13 @@ public class BST<K extends Comparable<K>, V> {
 	}
 
 	/**
-	 * 后序遍历
+	 * 按层次遍历
 	 * 
-	 * @param x
 	 */
-	private void post_order(Node x) {
-		if (x != null) {
-			in_order(x.left);
-			in_order(x.right);
-			System.out.println(x.key);
-		}
+	public void levelOrderPrint() {
+		level_order(root);
 	}
-
-	/**
-	 * 层次遍历
-	 * 
-	 * @param x
-	 */
+	
 	private void level_order(Node x) {
 		if (x != null) {
 			Queue<Node> queue = new LinkedList<Node>();
@@ -205,7 +176,9 @@ public class BST<K extends Comparable<K>, V> {
 		}
 	}
 
-	// 删除最小节点
+	/**
+	 *  删除最小节点
+	 */
 	public void deleteMin() {
 		root = deleteMin(root);
 	}
@@ -220,7 +193,9 @@ public class BST<K extends Comparable<K>, V> {
 
 	}
 
-	// 最小节点
+	/**
+	 *  x子树的最小节点
+	 */
 	private Node min(Node x) {
 		if (x.left == null) {
 			return x;
@@ -228,7 +203,10 @@ public class BST<K extends Comparable<K>, V> {
 		return min(x.left);
 	}
 
-	// 删除指定key
+	/**
+	 *  删除指定key
+	 * @param key
+	 */
 	public void delete(K key) {
 		root = deleteNode(root, key);
 	}
@@ -261,7 +239,11 @@ public class BST<K extends Comparable<K>, V> {
 		return x;
 	}
 
-	// 树的高度
+	/**
+	 * 树的高度
+	 * 
+	 * @return
+	 */
 	public int height() {
 		return height(root);
 	}
