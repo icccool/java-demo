@@ -214,6 +214,15 @@ public class DateUtil {
 		return null;
 	}
 
+
+	/**
+	 * @param dateStr 日期字符串
+	 * @return 日期
+	 */
+	public static String formatDate(Date date,String dateStr) {
+		return (new SimpleDateFormat(dateStr)).format(date);
+	}
+
 	// ------------------------------------ Parse end
 	// ----------------------------------------------
 

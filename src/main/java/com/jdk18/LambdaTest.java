@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by john on 18/1/5.
+ * jdk1.8  新特性
  */
 public class LambdaTest {
 
@@ -19,6 +19,8 @@ public class LambdaTest {
     	}).start();
     	//Java 8方式：
 		new Thread(() -> System.out.println("In Java8, Lambda expression rocks !!")).start();
+
+
     	//=======================================================================================
     	// Java 8之前：
     	List<String> features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
@@ -28,11 +30,10 @@ public class LambdaTest {
     	//Java 8方式：
 		List features2 = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
 		features2.forEach(n -> System.out.println(n));
+
     	//=======================================================================================
     	
-    	
         MyString reverse = (str)-> {
-
             return "";
         };
         String s = reverse.myStringFunction("abc");
