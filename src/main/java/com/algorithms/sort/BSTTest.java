@@ -2,15 +2,22 @@ package com.algorithms.sort;
 
 public class BSTTest {
 	public static void main(String[] args) {
+		String strs = "A X C S E R H";
+		String[] chs = strs.split(" ");
 		BST<String, String> bst = new BST<String, String>();
-		bst.put("S", "AAA");
-		bst.put("E", "BBB");
-		bst.put("X", "CCC");
-		bst.put("A", "DDD");
-		bst.put("R", "EEE");
-		bst.put("C", "GGG");
-		bst.put("H", "GGG");
-		bst.put("M", "GGG");
+		for (String s : chs) {
+			bst.put(s, "A");
+		}
+		
+//		BST<String, String> bst = new BST<String, String>();
+//		bst.put("S", "AAA");
+//		bst.put("E", "BBB");
+//		bst.put("X", "CCC");
+//		bst.put("A", "DDD");
+//		bst.put("R", "EEE");
+//		bst.put("C", "GGG");
+//		bst.put("H", "GGG");
+//		bst.put("M", "GGG");
 
 		System.out.println("------------get------------");
 		String str = bst.get("5");

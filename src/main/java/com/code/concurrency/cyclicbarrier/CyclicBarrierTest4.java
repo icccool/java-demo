@@ -7,6 +7,11 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * 
+ * @author wang
+ *
+ */
 public class CyclicBarrierTest4 {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
