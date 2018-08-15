@@ -1,5 +1,7 @@
 package com.algorithms.sort;
 
+import java.util.Queue;
+
 public class BSTTest {
 	public static void main(String[] args) {
 		String strs = "A X C S E R H";
@@ -19,17 +21,32 @@ public class BSTTest {
 //		bst.put("H", "GGG");
 //		bst.put("M", "GGG");
 
-		System.out.println("------------get------------");
+		bst.put("S", "AAA");
+		bst.put("E", "BBB");
+		bst.put("X", "CCC");
+
+		bst.put("A", "DDD");
+		bst.put("R", "EEE");
+
+		bst.put("C", "GGG");
+		bst.put("H", "GGG");
+
+		bst.put("M", "GGG");
+
+		bst.put("L", "GGG");
+		bst.put("P", "GGG");
+
+		System.out.println("------------根据key获取值------------");
 		String str = bst.get("5");
 		System.out.println(str);
 
-		System.out.println("------------size------------");
+		System.out.println("------------节点数量------------");
 		System.out.println(bst.size());
 
-		System.out.println("------------deleteMin-----------");
+		System.out.println("------------删除最小的-----------");
 		//bst.deleteMin();
 
-		System.out.println("------------delete E------------");
+		System.out.println("------------删除E------------");
 		//bst.delete("E");
 		
 		//树的高度
@@ -42,6 +59,15 @@ public class BSTTest {
 
 		System.out.println("------------按层次遍历------------");
 		bst.levelOrderPrint();
+
+		System.out.println("------------按层次遍历------------");
+		bst.levelOrderPrint();
+
+		System.out.println("------------查找[L..P]范围------------");
+		Queue<String> queue = bst.keys("L","P");
+		if (!queue.isEmpty()){
+			System.out.println(queue);
+		}
 
 		bst.levelOrderGraph();
 	}
