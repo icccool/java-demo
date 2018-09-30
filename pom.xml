@@ -174,11 +174,11 @@
 	        <version>2.7.3</version>  
 	    </dependency> 
 	    
-	    <!--ActiveMq  -->
-	    <dependency>
-		    <groupId>org.apache.activemq</groupId>
-		    <artifactId>activemq-core</artifactId>
-		    <version>5.7.0</version>
+
+		<dependency>
+			<groupId>com.rabbitmq</groupId>
+			<artifactId>amqp-client</artifactId>
+			<version>3.6.5</version>
 		</dependency>
 		
 		<dependency>
