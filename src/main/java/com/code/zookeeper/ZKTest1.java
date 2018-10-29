@@ -18,7 +18,7 @@ public class ZKTest1 {
                 }
             });
 
-            byte[] data = zkClient.getData("/orchestration-demo/orchestration-sharding-data-source/config/sharding/rule", false, null);
+            byte[] data = zkClient.getData("/sharding-orchestration/orchestration-sharding-data-source/config/sharding/rule", false, null);
             System.out.println(new String(data, "utf-8"));
             Yaml yaml = new Yaml();
 

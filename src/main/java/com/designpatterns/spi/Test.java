@@ -12,11 +12,12 @@ import java.util.ServiceLoader;
  */
 public class Test {
 	public static void main(String[] args) {
-		ServiceLoader<Animal> serviceLoader=ServiceLoader.load(Animal.class);
-		for (Animal animal : serviceLoader) {
-			System.out.println(animal.getClass());
-			animal.run();
-		}
+        ServiceLoader<Animal> serviceLoader = ServiceLoader.load(Animal.class);
+        Iterator<Animal> it = serviceLoader.iterator();
+        while (it.hasNext()) {
+            Animal service = it.next();
+            service.run();
+        }
 
 	}
 }
