@@ -29,8 +29,8 @@
 
 		<!--reach数据库连接的信息：驱动类、连接地址、用户名、密码-->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-						connectionURL="jdbc:mysql://114.215.198.87:3306/pay" userId="linxueliang"
-						password="linxl123">
+						connectionURL="jdbc:mysql://192.168.10.130:3308/pos?useSSL=false" userId="agent"
+						password="agent123">
 		</jdbcConnection>
 
 		<javaModelGenerator targetPackage="entity"
@@ -50,7 +50,7 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		
-		<table tableName="ad_application_form" domainObjectName="adCouponCode"
+		<table tableName="t_ware" domainObjectName="Ware"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">

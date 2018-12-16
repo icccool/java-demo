@@ -4,7 +4,11 @@ public class Student {
 	int age;
 	String name;
 
-	public Student() {
+    public Student(int age) {
+        this.age = age;
+    }
+
+    public Student() {
 		System.out.println("student has initialled.");
 	}
 

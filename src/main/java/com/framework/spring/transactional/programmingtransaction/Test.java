@@ -1,8 +1,5 @@
 package com.framework.spring.transactional.programmingtransaction;
 
-import com.framework.spring.entity.employees.Employees;
-import com.framework.spring.transactional.test1.service.EmployeesService;
-import org.omg.CORBA.portable.ApplicationException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -12,7 +9,6 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.util.Log4jConfigurer;
 
 import java.io.FileNotFoundException;
-import java.util.Date;
 
 /**
  * spring 编程式事务
@@ -39,6 +35,7 @@ public class Test {
 		//获取事务的状态
 		TransactionStatus status = transactionManager.getTransaction(td);
 		try{
+
 
 			//调用需要进行事务处理的目标方法
 		}catch(Exception e){
