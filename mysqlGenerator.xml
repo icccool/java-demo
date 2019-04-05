@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+
+	<classPathEntry location="extend-libs/mysql-connector-java-5.1.32.jar"/>
+	
+	<context id="MysqlTables" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!--reach数据库连接的信息：驱动类、连接地址、用户名、密码
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://114.215.198.87:3306/report" userId="linxueliang"
+			password="linxl123">
+		</jdbcConnection>
+		-->
+
+		<!--116数据库连接的信息：驱动类、连接地址、用户名、密码
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://119.23.51.116:3306/employees" userId="root"
+			password="w5571393#">
+		</jdbcConnection>
+		-->
+
+		<!--reach数据库连接的信息：驱动类、连接地址、用户名、密码-->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+						connectionURL="jdbc:mysql://192.168.10.130:3306/ds0?useSSL=false" userId="agent"
+						password="agent123">
+		</jdbcConnection>
+
+
+		<javaModelGenerator targetPackage="entity"
+			targetProject="${local.dir}/src/main/java/generator">
+			<property name="enableSubPackages" value="true" />
+			<!-- <property name="mapUnderscoreToCamelCase" value="false"/> -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="xml"
+			targetProject="${local.dir}/src/main/java/generator">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="mapper" targetProject="${local.dir}/src/main/java/generator">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		
+		<table tableName="sales_prompt_busi_0" domainObjectName="SalesPromptBusi"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+			<property name="useActualColumnNames" value="false" />
+		</table>
+		
+	</context>
+</generatorConfiguration>

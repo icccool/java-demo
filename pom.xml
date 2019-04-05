@@ -325,5 +325,32 @@
             <version>1.10.2</version>
         </dependency>
 
+        <!--oracle11 -->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>14</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/extend-libs/ojdbc6.jar</systemPath> <!-- must match file name -->
+        </dependency>
+
+        <!--jasperreports -->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>14</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/extend-libs/jasperreports-5.6.0.jar</systemPath> <!-- must match file name -->
+        </dependency>
+
+
+        <!-- jsqlparser sql语法解析 -->
+        <dependency>
+            <groupId>com.github.jsqlparser</groupId>
+            <artifactId>jsqlparser</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+
     </dependencies>
 </project>
