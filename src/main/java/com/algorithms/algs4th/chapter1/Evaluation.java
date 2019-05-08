@@ -47,6 +47,5 @@ public class Evaluation {
             }
         }
         System.out.println("result=" + vals.pop());
-
     }
 }
