@@ -12,9 +12,13 @@ public class Test {
 		Map<String, String> map = new HashMap<String, String>();
 
 		List<String> linked = new LinkedList<String>();
-		
+		linked.add("AA");
+		linked.add(1,"aaaaaaa");
+
+		List<String> aList = new ArrayList<>();
+		aList.add("aa");
+
 		int a = 9 >> 1;
-		linked.iterator();
 		System.out.println(a);
 	}
 }

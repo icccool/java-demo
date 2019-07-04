@@ -1,15 +1,17 @@
 package com.code.jvm;
 
 /**
- * 
- *  JVM最多能启动的线程数参照公式： (MaxProcessMemory - JVMMemory – ReservedOsMemory) / (ThreadStackSize) = Number of threads<br>
- * 
- *  MaxProcessMemory : 进程的最大寻址空间<br>
- *  JVMMemory : JVM内存<br>
- *  ReservedOsMemory : 保留的操作系统内存，如Native heap，JNI之类，一般100多M<br>
- *  ThreadStackSize : 线程栈的大小，jvm启动时由Xss指定<br>
- *  创建线程太多导致栈溢出, 解决办法 减小栈的大小<br>
- * 
+ *  测试jvm参数
+ *
+ *  创建线程导致内存溢出
+ *
+ *  1. JVM最多能启动的线程数参照公式： (MaxProcessMemory - JVMMemory – ReservedOsMemory) / (ThreadStackSize) = Number of threads<br>
+ *
+ *   其中：MaxProcessMemory 指的是一个进程的最大内存
+ *        JVMMemory         JVM内存
+ *        ReservedOsMemory  保留的操作系统内存
+ *        ThreadStackSize      线程栈的大小
+ *
  * @author WANG
  *
  */

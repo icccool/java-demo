@@ -17,28 +17,34 @@ public class Test {
         add.setAdd("上海");
         System.out.println("===========================");
         Student stu1 = new Student("zhangsan", 18);
+        System.out.println(stu1);
         stu1.setAdd(add);
         System.out.println(stu1.getName());
         System.out.println(stu1.getAge());
         System.out.println(stu1.getAdd());
         System.out.println("===========================");
+
+
         Student stu2 = (Student) stu1.clone();
+        System.out.println(stu2);
         // 这里改变'北京'
         // stu1和stu2都会变, 因为stu1和stu2都是引用相同add
         // 深度复制: 复制student时,对每个引用对象都要复制.
-        add.setAdd("北京");
+        stu2.getAdd().setAdd("北京");
 
         System.out.println(stu2.getName());
         System.out.println(stu2.getAge());
         System.out.println(stu2.getAdd());
+
+        System.out.println(" stu1--> " + stu1.getAdd());
         System.out.println("===========================");
 
-        System.out.println(stu1.getName());
-        System.out.println(stu1.getAge());
-        System.out.println(stu1.getAdd());
+//        System.out.println(stu1.getName());
+//        System.out.println(stu1.getAge());
+//        System.out.println(stu1.getAdd());
 
-        System.out.println(stu1);
-        System.out.println(stu2);
+//        System.out.println(stu1);
+//        System.out.println(stu2);
 
     }
 }

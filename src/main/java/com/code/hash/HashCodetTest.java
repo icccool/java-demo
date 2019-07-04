@@ -1,5 +1,7 @@
 package com.code.hash;
 
+import com.framework.spring.aop.aspect.entity.User;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,5 +41,6 @@ public class HashCodetTest {
 		Set<Person> set = new HashSet<Person>();
 		new Person("a", 11);
 		new Person("b", 11);
+
 	}
 }

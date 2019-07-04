@@ -7,12 +7,13 @@ import java.util.List;
  * -Xmx40m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=D:\Java\dump
  * -XX:+HeapDumpOnOutOfMemoryError 参数输出dump文件 
  *
- * Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+ * @Exception Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
  * 堆内存异常
  * 
  * @author WANG
  */
 public class HeapOOM {
+
 	static class OOMObject {
 		private int[] arr = new int[1024];
 	}

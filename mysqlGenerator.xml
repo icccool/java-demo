@@ -31,10 +31,9 @@
 
 		<!--reach数据库连接的信息：驱动类、连接地址、用户名、密码-->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-						connectionURL="jdbc:mysql://192.168.10.130:3306/ds0?useSSL=false" userId="agent"
+						connectionURL="jdbc:mysql://192.168.10.130:3308/h3-order?useSSL=false" userId="agent"
 						password="agent123">
 		</jdbcConnection>
-
 
 		<javaModelGenerator targetPackage="entity"
 			targetProject="${local.dir}/src/main/java/generator">
@@ -53,7 +52,7 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		
-		<table tableName="sales_prompt_busi_0" domainObjectName="SalesPromptBusi"
+		<table tableName="tbl_user" domainObjectName="User"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
