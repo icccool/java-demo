@@ -31,7 +31,7 @@
 
 		<!--reach数据库连接的信息：驱动类、连接地址、用户名、密码-->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-						connectionURL="jdbc:mysql://192.168.10.130:3308/h3-order?useSSL=false" userId="agent"
+						connectionURL="jdbc:mysql://192.168.10.130:3308/pos?useSSL=false" userId="agent"
 						password="agent123">
 		</jdbcConnection>
 
@@ -52,7 +52,7 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		
-		<table tableName="tbl_user" domainObjectName="User"
+		<table tableName="sale_prescription" domainObjectName="SalePrescription"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">

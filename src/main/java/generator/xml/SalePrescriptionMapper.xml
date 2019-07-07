@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.SalePrescriptionMapper" >
+  <resultMap id="BaseResultMap" type="entity.SalePrescription" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="prescription_code" property="prescriptionCode" jdbcType="VARCHAR" />
+    <result column="cg_code" property="cgCode" jdbcType="INTEGER" />
+    <result column="cp_code" property="cpCode" jdbcType="INTEGER" />
+    <result column="busi_code" property="busiCode" jdbcType="INTEGER" />
+    <result column="pos_code" property="posCode" jdbcType="VARCHAR" />
+    <result column="member_card_number" property="memberCardNumber" jdbcType="VARCHAR" />
+    <result column="prescription_type" property="prescriptionType" jdbcType="TINYINT" />
+    <result column="prescription_source" property="prescriptionSource" jdbcType="TINYINT" />
+    <result column="prescription_check_level" property="prescriptionCheckLevel" jdbcType="TINYINT" />
+    <result column="prescription_time" property="prescriptionTime" jdbcType="TIMESTAMP" />
+    <result column="pharmacist_id" property="pharmacistId" jdbcType="BIGINT" />
+    <result column="pharmacist_check_status" property="pharmacistCheckStatus" jdbcType="TINYINT" />
+    <result column="pharmacist_advice" property="pharmacistAdvice" jdbcType="VARCHAR" />
+    <result column="pharmacist_time" property="pharmacistTime" jdbcType="TIMESTAMP" />
+    <result column="physician_id" property="physicianId" jdbcType="BIGINT" />
+    <result column="physician_check_status" property="physicianCheckStatus" jdbcType="TINYINT" />
+    <result column="physician_advice" property="physicianAdvice" jdbcType="VARCHAR" />
+    <result column="physician_time" property="physicianTime" jdbcType="TIMESTAMP" />
+    <result column="check_status" property="checkStatus" jdbcType="TINYINT" />
+    <result column="check_description" property="checkDescription" jdbcType="VARCHAR" />
+    <result column="net_cost" property="netCost" jdbcType="DOUBLE" />
+    <result column="cashier_id" property="cashierId" jdbcType="BIGINT" />
+    <result column="sync_status" property="syncStatus" jdbcType="TINYINT" />
+    <result column="delete_status" property="deleteStatus" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, prescription_code, cg_code, cp_code, busi_code, pos_code, member_card_number, 
+    prescription_type, prescription_source, prescription_check_level, prescription_time, 
+    pharmacist_id, pharmacist_check_status, pharmacist_advice, pharmacist_time, physician_id, 
+    physician_check_status, physician_advice, physician_time, check_status, check_description, 
+    net_cost, cashier_id, sync_status, delete_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sale_prescription
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sale_prescription
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="entity.SalePrescription" >
+    insert into sale_prescription (id, prescription_code, cg_code, 
+      cp_code, busi_code, pos_code, 
+      member_card_number, prescription_type, prescription_source, 
+      prescription_check_level, prescription_time, 
+      pharmacist_id, pharmacist_check_status, pharmacist_advice, 
+      pharmacist_time, physician_id, physician_check_status, 
+      physician_advice, physician_time, check_status, 
+      check_description, net_cost, cashier_id, 
+      sync_status, delete_status)
+    values (#{id,jdbcType=INTEGER}, #{prescriptionCode,jdbcType=VARCHAR}, #{cgCode,jdbcType=INTEGER}, 
+      #{cpCode,jdbcType=INTEGER}, #{busiCode,jdbcType=INTEGER}, #{posCode,jdbcType=VARCHAR}, 
+      #{memberCardNumber,jdbcType=VARCHAR}, #{prescriptionType,jdbcType=TINYINT}, #{prescriptionSource,jdbcType=TINYINT}, 
+      #{prescriptionCheckLevel,jdbcType=TINYINT}, #{prescriptionTime,jdbcType=TIMESTAMP}, 
+      #{pharmacistId,jdbcType=BIGINT}, #{pharmacistCheckStatus,jdbcType=TINYINT}, #{pharmacistAdvice,jdbcType=VARCHAR}, 
+      #{pharmacistTime,jdbcType=TIMESTAMP}, #{physicianId,jdbcType=BIGINT}, #{physicianCheckStatus,jdbcType=TINYINT}, 
+      #{physicianAdvice,jdbcType=VARCHAR}, #{physicianTime,jdbcType=TIMESTAMP}, #{checkStatus,jdbcType=TINYINT}, 
+      #{checkDescription,jdbcType=VARCHAR}, #{netCost,jdbcType=DOUBLE}, #{cashierId,jdbcType=BIGINT}, 
+      #{syncStatus,jdbcType=TINYINT}, #{deleteStatus,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.SalePrescription" >
+    insert into sale_prescription
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="prescriptionCode != null" >
+        prescription_code,
+      </if>
+      <if test="cgCode != null" >
+        cg_code,
+      </if>
+      <if test="cpCode != null" >
+        cp_code,
+      </if>
+      <if test="busiCode != null" >
+        busi_code,
+      </if>
+      <if test="posCode != null" >
+        pos_code,
+      </if>
+      <if test="memberCardNumber != null" >
+        member_card_number,
+      </if>
+      <if test="prescriptionType != null" >
+        prescription_type,
+      </if>
+      <if test="prescriptionSource != null" >
+        prescription_source,
+      </if>
+      <if test="prescriptionCheckLevel != null" >
+        prescription_check_level,
+      </if>
+      <if test="prescriptionTime != null" >
+        prescription_time,
+      </if>
+      <if test="pharmacistId != null" >
+        pharmacist_id,
+      </if>
+      <if test="pharmacistCheckStatus != null" >
+        pharmacist_check_status,
+      </if>
+      <if test="pharmacistAdvice != null" >
+        pharmacist_advice,
+      </if>
+      <if test="pharmacistTime != null" >
+        pharmacist_time,
+      </if>
+      <if test="physicianId != null" >
+        physician_id,
+      </if>
+      <if test="physicianCheckStatus != null" >
+        physician_check_status,
+      </if>
+      <if test="physicianAdvice != null" >
+        physician_advice,
+      </if>
+      <if test="physicianTime != null" >
+        physician_time,
+      </if>
+      <if test="checkStatus != null" >
+        check_status,
+      </if>
+      <if test="checkDescription != null" >
+        check_description,
+      </if>
+      <if test="netCost != null" >
+        net_cost,
+      </if>
+      <if test="cashierId != null" >
+        cashier_id,
+      </if>
+      <if test="syncStatus != null" >
+        sync_status,
+      </if>
+      <if test="deleteStatus != null" >
+        delete_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="prescriptionCode != null" >
+        #{prescriptionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cgCode != null" >
+        #{cgCode,jdbcType=INTEGER},
+      </if>
+      <if test="cpCode != null" >
+        #{cpCode,jdbcType=INTEGER},
+      </if>
+      <if test="busiCode != null" >
+        #{busiCode,jdbcType=INTEGER},
+      </if>
+      <if test="posCode != null" >
+        #{posCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memberCardNumber != null" >
+        #{memberCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="prescriptionType != null" >
+        #{prescriptionType,jdbcType=TINYINT},
+      </if>
+      <if test="prescriptionSource != null" >
+        #{prescriptionSource,jdbcType=TINYINT},
+      </if>
+      <if test="prescriptionCheckLevel != null" >
+        #{prescriptionCheckLevel,jdbcType=TINYINT},
+      </if>
+      <if test="prescriptionTime != null" >
+        #{prescriptionTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pharmacistId != null" >
+        #{pharmacistId,jdbcType=BIGINT},
+      </if>
+      <if test="pharmacistCheckStatus != null" >
+        #{pharmacistCheckStatus,jdbcType=TINYINT},
+      </if>
+      <if test="pharmacistAdvice != null" >
+        #{pharmacistAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="pharmacistTime != null" >
+        #{pharmacistTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="physicianId != null" >
+        #{physicianId,jdbcType=BIGINT},
+      </if>
+      <if test="physicianCheckStatus != null" >
+        #{physicianCheckStatus,jdbcType=TINYINT},
+      </if>
+      <if test="physicianAdvice != null" >
+        #{physicianAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="physicianTime != null" >
+        #{physicianTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkStatus != null" >
+        #{checkStatus,jdbcType=TINYINT},
+      </if>
+      <if test="checkDescription != null" >
+        #{checkDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="netCost != null" >
+        #{netCost,jdbcType=DOUBLE},
+      </if>
+      <if test="cashierId != null" >
+        #{cashierId,jdbcType=BIGINT},
+      </if>
+      <if test="syncStatus != null" >
+        #{syncStatus,jdbcType=TINYINT},
+      </if>
+      <if test="deleteStatus != null" >
+        #{deleteStatus,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.SalePrescription" >
+    update sale_prescription
+    <set >
+      <if test="prescriptionCode != null" >
+        prescription_code = #{prescriptionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cgCode != null" >
+        cg_code = #{cgCode,jdbcType=INTEGER},
+      </if>
+      <if test="cpCode != null" >
+        cp_code = #{cpCode,jdbcType=INTEGER},
+      </if>
+      <if test="busiCode != null" >
+        busi_code = #{busiCode,jdbcType=INTEGER},
+      </if>
+      <if test="posCode != null" >
+        pos_code = #{posCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memberCardNumber != null" >
+        member_card_number = #{memberCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="prescriptionType != null" >
+        prescription_type = #{prescriptionType,jdbcType=TINYINT},
+      </if>
+      <if test="prescriptionSource != null" >
+        prescription_source = #{prescriptionSource,jdbcType=TINYINT},
+      </if>
+      <if test="prescriptionCheckLevel != null" >
+        prescription_check_level = #{prescriptionCheckLevel,jdbcType=TINYINT},
+      </if>
+      <if test="prescriptionTime != null" >
+        prescription_time = #{prescriptionTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pharmacistId != null" >
+        pharmacist_id = #{pharmacistId,jdbcType=BIGINT},
+      </if>
+      <if test="pharmacistCheckStatus != null" >
+        pharmacist_check_status = #{pharmacistCheckStatus,jdbcType=TINYINT},
+      </if>
+      <if test="pharmacistAdvice != null" >
+        pharmacist_advice = #{pharmacistAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="pharmacistTime != null" >
+        pharmacist_time = #{pharmacistTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="physicianId != null" >
+        physician_id = #{physicianId,jdbcType=BIGINT},
+      </if>
+      <if test="physicianCheckStatus != null" >
+        physician_check_status = #{physicianCheckStatus,jdbcType=TINYINT},
+      </if>
+      <if test="physicianAdvice != null" >
+        physician_advice = #{physicianAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="physicianTime != null" >
+        physician_time = #{physicianTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkStatus != null" >
+        check_status = #{checkStatus,jdbcType=TINYINT},
+      </if>
+      <if test="checkDescription != null" >
+        check_description = #{checkDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="netCost != null" >
+        net_cost = #{netCost,jdbcType=DOUBLE},
+      </if>
+      <if test="cashierId != null" >
+        cashier_id = #{cashierId,jdbcType=BIGINT},
+      </if>
+      <if test="syncStatus != null" >
+        sync_status = #{syncStatus,jdbcType=TINYINT},
+      </if>
+      <if test="deleteStatus != null" >
+        delete_status = #{deleteStatus,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.SalePrescription" >
+    update sale_prescription
+    set prescription_code = #{prescriptionCode,jdbcType=VARCHAR},
+      cg_code = #{cgCode,jdbcType=INTEGER},
+      cp_code = #{cpCode,jdbcType=INTEGER},
+      busi_code = #{busiCode,jdbcType=INTEGER},
+      pos_code = #{posCode,jdbcType=VARCHAR},
+      member_card_number = #{memberCardNumber,jdbcType=VARCHAR},
+      prescription_type = #{prescriptionType,jdbcType=TINYINT},
+      prescription_source = #{prescriptionSource,jdbcType=TINYINT},
+      prescription_check_level = #{prescriptionCheckLevel,jdbcType=TINYINT},
+      prescription_time = #{prescriptionTime,jdbcType=TIMESTAMP},
+      pharmacist_id = #{pharmacistId,jdbcType=BIGINT},
+      pharmacist_check_status = #{pharmacistCheckStatus,jdbcType=TINYINT},
+      pharmacist_advice = #{pharmacistAdvice,jdbcType=VARCHAR},
+      pharmacist_time = #{pharmacistTime,jdbcType=TIMESTAMP},
+      physician_id = #{physicianId,jdbcType=BIGINT},
+      physician_check_status = #{physicianCheckStatus,jdbcType=TINYINT},
+      physician_advice = #{physicianAdvice,jdbcType=VARCHAR},
+      physician_time = #{physicianTime,jdbcType=TIMESTAMP},
+      check_status = #{checkStatus,jdbcType=TINYINT},
+      check_description = #{checkDescription,jdbcType=VARCHAR},
+      net_cost = #{netCost,jdbcType=DOUBLE},
+      cashier_id = #{cashierId,jdbcType=BIGINT},
+      sync_status = #{syncStatus,jdbcType=TINYINT},
+      delete_status = #{deleteStatus,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
