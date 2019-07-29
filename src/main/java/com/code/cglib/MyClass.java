@@ -1,7 +1,10 @@
 package com.code.cglib;
 
-public class MyClass {
-	public final void method() {
-		System.out.println("MyClass.method");
-	}
+public final class MyClass {
+    public MyClass() {
+    }
+
+    public  void method() {
+        System.out.println("MyClass.method");
+    }
 }

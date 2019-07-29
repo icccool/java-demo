@@ -10,7 +10,6 @@ public class Test<A, V> {
 
 	@Override
 	public String toString() {
-		
 		return id + "-->";
 	}
 

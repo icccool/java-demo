@@ -1,7 +1,9 @@
 package com.framework.spring.xmlbeanfactory.bean;
 
 public class Student {
-	int age;
+
+    int age;
+
 	String name;
 
 	Teacher teacher;

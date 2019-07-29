@@ -18,6 +18,7 @@ public class MyZooKeeper implements Watcher {
     protected CountDownLatch countDownLatch = new CountDownLatch(1);
     //缓存时间
     private static final int SESSION_TIME = 2000;
+
     public static ZooKeeper zooKeeper = null;
 
     /**
@@ -28,7 +29,6 @@ public class MyZooKeeper implements Watcher {
         if(event.getState()== Event.KeeperState.SyncConnected){
             countDownLatch.countDown();
         }
-
         System.out.printf("===========>"+event);
 
     }
