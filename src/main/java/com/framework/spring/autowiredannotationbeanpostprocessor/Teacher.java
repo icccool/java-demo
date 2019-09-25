@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Teacher {
+
 	String name = "zhangsan";
 	int age = 28;
 

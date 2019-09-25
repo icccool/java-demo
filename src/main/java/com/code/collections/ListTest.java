@@ -19,5 +19,8 @@ public class ListTest {
 		l2.add("6");
 		
 		System.out.println(l1);
+
+		Long code = 123L;
+
 	}
 }

@@ -1,15 +1,15 @@
 package com.framework.spring.autowiredannotationbeanpostprocessor;
 
-import java.io.FileNotFoundException;
-
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.util.Log4jConfigurer;
+
+import java.io.FileNotFoundException;
 
 /**
  * BeanNameAutoProxyCreator <br>
  * Autowired 通过 BeanPostProcessor实现
+ * 具体实现
  * 
  * @author John
  *

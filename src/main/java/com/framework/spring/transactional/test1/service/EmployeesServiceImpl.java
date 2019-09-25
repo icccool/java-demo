@@ -13,7 +13,7 @@ public class EmployeesServiceImpl implements EmployeesService {
     @Autowired
     private EmployeesMapper employeesMapper;
 
-    //@Transactional
+    @Transactional
     public int insert(Employees record){
         //操作2
         int i = employeesMapper.insert(record);
@@ -21,9 +21,9 @@ public class EmployeesServiceImpl implements EmployeesService {
         record.setEmpNo(record.getEmpNo() + 1000);
         insert2(record);
 
-        //如果捕捉异常事务不会回滚
+        //如果异常被捕捉,事务不会回滚 <----
 //        try {
-            int d = 1 / 0;
+//            int d = 1 / 0;
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
@@ -31,10 +31,10 @@ public class EmployeesServiceImpl implements EmployeesService {
     }
 
 
-    //@Transactional
+    @Transactional
     public int insert2(Employees record){
         int i = employeesMapper.insert(record);
-       // int c = 1 / 0;
+        int c = 1 / 0; //触发异常
         return  i;
     }
 

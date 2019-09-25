@@ -38,7 +38,8 @@ public class Test {
 
 
 			//调用需要进行事务处理的目标方法
-		}catch(Exception e){
+            transactionManager.commit(status);
+        }catch(Exception e){
 			//调用目标方法过程中产生异常，则对事务进行回滚处理
 			transactionManager.rollback(status);
 			throw e;

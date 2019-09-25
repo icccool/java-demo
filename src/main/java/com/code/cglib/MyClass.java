@@ -1,6 +1,6 @@
 package com.code.cglib;
 
-public final class MyClass {
+public  class MyClass {
     public MyClass() {
     }
 
